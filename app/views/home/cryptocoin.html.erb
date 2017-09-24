@@ -1,0 +1,29 @@
+<div class="page-header">
+    <h1>Cryptocurrency index</h1>
+</div>
+<div class="panel panel-default">
+    <table class="table">
+        <thead>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Market Cap</th>
+            <th>Circulating Supply</th>
+            <th>Volume (24h)</th>
+            <th>% Change (24h)</th>
+        </thead>
+        <tbody>
+            <% @json.each do |value| %>
+                <tr>
+                    <td><%= value['name'] %></td>
+                    <td><%= value['symbol'] %></td>
+                    <td><%= value['price_usd'] %></td>
+                    <td>$<%= value['market_cap_usd'] %></td>
+                    <td><%= value['available_supply'] %> <%= value['symbol'] %></td>
+                    <td>$<%= value['24h_volume_usd'] %></td>
+                    <td><%= value['percent_change_24h'] %> %</td>
+                </tr>
+            <% end%>
+        </tbody>
+    </table>
+</div>
