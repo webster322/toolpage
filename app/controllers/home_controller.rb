@@ -12,4 +12,8 @@ class HomeController < ApplicationController
         data = JSON.parse(response.body)
         @json = data.paginate(page: params[:page], per_page: params[:num])
     end
+    
+    def todo
+        
+    end
 end
